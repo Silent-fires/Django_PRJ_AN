@@ -1,0 +1,6 @@
+look here:
+
+https://github.com/NM-TAFE/dip-adv-prog-python/tree/2026S2/notifier-app
+
+
+superuser password: pass

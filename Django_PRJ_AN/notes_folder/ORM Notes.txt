@@ -1,0 +1,53 @@
+https://www.geeksforgeeks.org/python/django-orm-inserting-updating-deleting-data/
+
+Example:
+In Model.py (music.models)
+
+class Album(models.Model):
+    title = models.CharField(max_length = 30)
+    artist = models.CharField(max_length = 30)
+    genre = models.CharField(max_length = 30)
+
+    def __str__(self):
+        return self.title
+
+
+USAGE:
+
+from music.models import Album
+
+# Inserting into the database.
+a = Album(title="Divide", artist="Ed Sheeran", genre="Pop")
+a.save()
+
+# Getting all
+all_albums = Album.objects.all()
+
+# Getting via filter
+beatles_albums = Album.objects.filter(artist="The Beatles")
+
+# Getting via Index (Primary Key)
+single_album = Album.objects.get(pk=3)
+
+
+
+
+
+
+MIGRATIONS
+This bit needs to be done when you run the app for the first time or anytime you alter the models
+# https://docs.djangoproject.com/en/6.1/topics/migrations/
+#In a shell in the base directory:
+
+>>> python manage.py makemigrations
+
+#It should make a new folder called /migrations and that will contain a new files.
+
+#Run to make make/change the database. This will run all of the migrations in the /migrations file.
+>>> python manage.py migrate
+
+
+
+
+
+
