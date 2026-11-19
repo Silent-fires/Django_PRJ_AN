@@ -186,10 +186,10 @@ Commit messages should clearly describe the changes being introduced.
 Use the following checklist to make sure you have covered the expected functionality.
 
 ### Main Application
-- [ ] Prediction input view implemented.
-- [ ] Prediction results view implemented.
+- [/] Prediction input view implemented.
+- [/] Prediction results view implemented.
 - [ ] User input validated.
-- [ ] Prediction results stored in the database.
+- [/] Prediction results stored in the database.
 - [ ] Django ORM used for database operations.
 
 ### API
@@ -204,12 +204,12 @@ Use the following checklist to make sure you have covered the expected functiona
 - [ ] Manually created records use the same database model as generated predictions.
 
 ### Logging
-- [ ] `logs/` directory created.
-- [ ] `predictions.log` file created.
-- [ ] Each prediction generates a log entry.
+- [/] `logs/` directory created.
+- [/] `predictions.log` file created.
+- [/] Each prediction generates a log entry.
 
 ### GitHub
-- [ ] Project maintained in a GitHub repository.
+- [/] Project maintained in a GitHub repository.
 - [ ] Commits made at important development checkpoints.
 - [ ] Commit messages clearly describe the changes.
 

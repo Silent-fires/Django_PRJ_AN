@@ -1,9 +1,9 @@
  
 .venv activate:
 
+ * cd Django_PRJ_AN
  * python -m venv .venv
  * source .venv/Scripts/activate
- * cd project_root
  * pip install -r requirements.txt
  
 migration:
