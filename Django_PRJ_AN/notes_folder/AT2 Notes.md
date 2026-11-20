@@ -187,8 +187,8 @@ Use the following checklist to make sure you have covered the expected functiona
 
 ### Main Application
 - [/] Prediction input view implemented.
-- [/] Prediction results view implemented.
-- [ ] User input validated.
+- [-] Prediction results view implemented.
+- [/] User input validated.
 - [/] Prediction results stored in the database.
 - [ ] Django ORM used for database operations.
 
@@ -210,8 +210,8 @@ Use the following checklist to make sure you have covered the expected functiona
 
 ### GitHub
 - [/] Project maintained in a GitHub repository.
-- [ ] Commits made at important development checkpoints.
-- [ ] Commit messages clearly describe the changes.
+- [/] Commits made at important development checkpoints.
+- [/] Commit messages clearly describe the changes.
 
 ---
 

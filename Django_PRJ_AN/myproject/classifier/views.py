@@ -10,9 +10,7 @@ from myproject.ml.predict import TextClassifier
 logger = logging.getLogger(__name__)
 
 
-# def classify(request):
-#     return HttpResponse("ML Classifier is working!")
-
+# 2a.1. Prediction Input View
 def classify(request):
     result = None
 
@@ -31,45 +29,15 @@ def classify(request):
         form = PredictionForm()
 
     return render(request,"classifier/results.html",
-        { "form": form, "result": result, },
-    )
+        { "form": form, "result": result, },) 
+    # Results (results.html)
 
-#region old
-# def classify_text(request):
-#     result = None
 
-#     if request.method == "POST":
-#         form = PredictionForm(request.POST)
+# 2a.2. Prediction Results View
+def display(request):
+    entries = Prediction.objects.all()
 
-#         if form.is_valid():
-#             text = form.cleaned_data["text"]
+    return render(request,"classifier/display.html",
+        { "entries": entries, },) 
+    # Display (display.html)
 
-#             try:
-#                 result = predict(text)
-
-#                 Prediction.objects.create(
-#                     text=text,
-#                     prediction=result["prediction"],
-#                     confidence=result["confidence"],
-#                 )
-
-#                 logger.info(
-#                     "Prediction made: prediction=%s confidence=%s",
-#                     result["prediction"],
-#                     result["confidence"],
-#                 )
-
-#             except Exception:
-#                 logger.exception("Prediction failed.")
-
-#                 result = {
-#                     "error": "Unable to make prediction."
-#                 }
-
-#     else:
-#         form = PredictionForm()
-
-#     return render(request,"classifier/results.html",
-#         { "form": form, "result": result, },
-#     )
-#endregion
