@@ -36,6 +36,13 @@ def classify(request):
 # 2a.2. Prediction Results View
 def display(request):
     entries = Prediction.objects.all()
+    
+    for entry in entries: # debuging
+        print("")
+        print(entry.id)
+        print(entry.userInput)
+        print(entry.prediction)
+        print("")
 
     return render(request,"classifier/display.html",
         { "entries": entries, },) 

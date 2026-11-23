@@ -84,20 +84,20 @@
     <!-- Display Box -->
     <table>
         <tr>
-            <th>ID</th>
-            <th>Text</th>
-            <th>Prediction</th>
-            <th>Confidence</th>
+            <th>ID </th>
+            <th>Text </th>
+            <th>Prediction </th>
+            <th>Confidence </th>
         </tr>
 
-        <!-- {% for entry in db %}
+        {% for entry in entries %}
         <tr>
-            <td>{{ entry.i }}</td>
-            <td>{{ entry.u }}</td>
-            <td>{{ entry.p }}</td>
-            <td>{{ entry.c }}</td>
+            <td>{{ entry.id }}</td>
+            <td>{{ entry.userInput }}</td>
+            <td>{{ entry.prediction }}</td>
+            <td>{{ entry.confidence }}</td>
         </tr>
-        {% endfor %}  -->
+        {% endfor %} 
     </table>
 
     <p>_</p>
