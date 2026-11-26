@@ -199,9 +199,9 @@ Use the following checklist to make sure you have covered the expected functiona
 - [-] Optional performance endpoint implemented (if attempted).
 
 ### Django Admin
-- [ ] Prediction model registered with Django admin.
-- [ ] Administrator can manually add prediction records.
-- [ ] Manually created records use the same database model as generated predictions.
+- [/] Prediction model registered with Django admin.
+- [/] Administrator can manually add prediction records.
+- [/] Manually created records use the same database model as generated predictions.
 
 ### Logging
 - [/] `logs/` directory created.

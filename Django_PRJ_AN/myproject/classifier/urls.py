@@ -8,4 +8,5 @@ urlpatterns = [
     path("", classify, name="classify"),
     path("display/", display, name="display"),
     path("api/", include("myproject.api.urls")),
+    path('admin/', admin.site.urls),
 ]
