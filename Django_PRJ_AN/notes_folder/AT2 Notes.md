@@ -187,16 +187,16 @@ Use the following checklist to make sure you have covered the expected functiona
 
 ### Main Application
 - [/] Prediction input view implemented.
-- [-] Prediction results view implemented.
+- [/] Prediction results view implemented.   -(could be improved)-
 - [/] User input validated.
 - [/] Prediction results stored in the database.
-- [ ] Django ORM used for database operations.
+- [/] Django ORM used for database operations.
 
 ### API
-- [ ] Prediction API endpoint implemented.
-- [ ] Accepts `text` and `model_id`.
-- [ ] Returns prediction results as JSON.
-- [ ] Optional performance endpoint implemented (if attempted).
+- [/] Prediction API endpoint implemented.
+- [-] Accepts `text` and `model_id`.
+- [/] Returns prediction results as JSON.
+- [-] Optional performance endpoint implemented (if attempted).
 
 ### Django Admin
 - [ ] Prediction model registered with Django admin.

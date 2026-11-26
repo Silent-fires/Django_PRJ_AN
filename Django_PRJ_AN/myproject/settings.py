@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'myproject.classifier',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -80,6 +80,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db2.sqlite3',
     }
 }
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Password validation

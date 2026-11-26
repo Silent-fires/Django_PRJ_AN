@@ -30,21 +30,23 @@ def classify(request):
 
     return render(request,"classifier/results.html",
         { "form": form, "result": result, },) 
-    # Results (results.html)
 
 
 # 2a.2. Prediction Results View
 def display(request):
-    entries = Prediction.objects.all()
+    try:
+        entries = Prediction.objects.all()
+        
+        for entry in entries: # debuging
+            print("")
+            print(entry.id)
+            print(entry.userInput)
+            print(entry.prediction)
+            print("")
+
+        return render(request,"classifier/display.html",
+            { "entries": entries, }) 
     
-    for entry in entries: # debuging
-        print("")
-        print(entry.id)
-        print(entry.userInput)
-        print(entry.prediction)
-        print("")
-
-    return render(request,"classifier/display.html",
-        { "entries": entries, },) 
-    # Display (display.html)
-
+    except Exception as error:
+        return render(request, "classifier/display.html",
+            {"entries": [], "error": str(error)})

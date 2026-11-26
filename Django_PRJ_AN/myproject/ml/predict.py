@@ -4,6 +4,8 @@ import sqlite3
 import logging
 import joblib
 
+from myproject.classifier.models import Prediction
+
 BASE_DIR = Path(__file__).resolve().parent
 MODEL_PATH = BASE_DIR / "news_classifier.pkl"
 
@@ -71,26 +73,29 @@ def predict(text):
     classifier = TextClassifier()
     return classifier.predict(text)
 
-def addPrediction(userInput,prediction,confidence):
+def addPrediction(_userInput,_prediction,_confidence):
     # 1. Connect to the database (creates the file if it doesn't exist)
-    with sqlite3.connect("../Django_PRJ_AN/db2.sqlite3") as conn:
-        cursor = conn.cursor()
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS ai_predictions (
-                id INTEGER PRIMARY KEY AUTOINCREMENT, 
-                userInput TEXT, 
-                prediction TEXT, 
-                confidence FLOAT)
-            """)
+    # with sqlite3.connect("../Django_PRJ_AN/db2.sqlite3") as conn:
+    #     cursor = conn.cursor()
+    #     cursor.execute("""
+    #         CREATE TABLE IF NOT EXISTS ai_predictions (
+    #             id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    #             userInput TEXT, 
+    #             prediction TEXT, 
+    #             confidence FLOAT)
+    #         """)
 
-        # 2. Define the SQL query with '?' placeholders to prevent SQL injection
-        sql = "INSERT INTO ai_predictions (userInput, prediction, confidence) VALUES (?, ?, ?)"
-        data = (userInput, prediction,confidence)
-        addLog(f"Text: {userInput} - Predict: {prediction} - Confidence: {confidence}")
+    #     # 2. Define the SQL query with '?' placeholders to prevent SQL injection
+    #     sql = "INSERT INTO ai_predictions (userInput, prediction, confidence) VALUES (?, ?, ?)"
+    #     data = (userInput, prediction,confidence)
+    #     addLog(f"Text: {userInput} - Predict: {prediction} - Confidence: {confidence}")
 
-        # 3. Execute and save the entry
-        cursor.execute(sql, data)
-        conn.commit()
+    #     # 3. Execute and save the entry
+    #     cursor.execute(sql, data)
+    #     conn.commit()
+    pred = Prediction(userInput = _userInput, prediction = _prediction, confidence = _confidence)
+    pred.save()
+
 
 def addLog(logText):
     log_path = Path(__file__).resolve().parent.parent / "logs" / "predictions.log"
